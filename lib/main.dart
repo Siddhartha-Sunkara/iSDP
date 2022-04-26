@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Myapp',
+      title: 'Myapp2',
       home:mainPage(),
     );
   }

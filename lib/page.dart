@@ -29,7 +29,7 @@ class _MyAppState extends State<mainPage> {
       title: 'Flutter Tutorial',
       home: Scaffold(
           appBar: AppBar(
-            title: const Text('Customer Details'),
+            title: const Text('Customer Detail'),
           ),
           body:
           Padding(

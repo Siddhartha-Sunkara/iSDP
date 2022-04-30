@@ -1,9 +1,12 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:project2/page.dart';
+import 'package:project2/customerDetails.dart';
+import 'package:project2/menu.dart';
+import 'package:project2/loginPage.dart';
+import 'package:project2/screens/signin_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-void main() => runApp(MyApp());
+
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -15,9 +18,9 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Myapp',
-      home:mainPage(),
+      home:SignInScreen(),
     );
   }
 }

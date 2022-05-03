@@ -32,7 +32,7 @@ class _MyAppState extends State<mainPage> {
       title: 'Flutter Tutorial',
       home: Scaffold(
           appBar: AppBar(
-            title: Text('Customer Details', style: GoogleFonts.montserrat(textStyle: Theme.of(context).textTheme.headline4, fontSize: 20, color: Colors.lightBlue,fontStyle: FontStyle.normal, fontWeight:FontWeight.w500 )),
+            title: Text('Customer Details', style: GoogleFonts.montserrat(textStyle: Theme.of(context).textTheme.headline4, fontSize: 20, color: Colors.purple.shade900,fontStyle: FontStyle.normal, fontWeight:FontWeight.w500 )),
             elevation: 0,
             backgroundColor: Colors.white,
             leading: const Icon(
@@ -104,7 +104,7 @@ class _MyAppState extends State<mainPage> {
                           color: Colors.black,
                         ),
                         border: OutlineInputBorder(),
-                        fillColor: Colors.indigo.shade100,
+                        fillColor: Color.fromRGBO(212, 223, 255, 1),
                         filled:true,
 
                       ),
@@ -128,7 +128,7 @@ class _MyAppState extends State<mainPage> {
                           color: Colors.black,
                         ),
                         border: OutlineInputBorder(),
-                        fillColor: Colors.indigo.shade100,
+                        fillColor: Color.fromRGBO(212, 223, 255, 1),
                         filled:true
                     ),
                     keyboardType: TextInputType.name,
@@ -152,7 +152,7 @@ class _MyAppState extends State<mainPage> {
                         color: Colors.black,
                       ),
                       border: OutlineInputBorder(),
-                      fillColor: Colors.indigo.shade100,
+                      fillColor: Color.fromRGBO(212, 223, 255, 1),
                       filled:true
                   ),
                   keyboardType: TextInputType.emailAddress,
@@ -172,7 +172,7 @@ class _MyAppState extends State<mainPage> {
                         color: Colors.black,
                       ),
                       border: OutlineInputBorder(),
-                      fillColor: Colors.indigo.shade100,
+                      fillColor: Color.fromRGBO(212, 223, 255, 1),
                       filled:true
                   ),
                   keyboardType: TextInputType.name,
@@ -194,7 +194,7 @@ class _MyAppState extends State<mainPage> {
                         color: Colors.black,
                       ),
                       border: OutlineInputBorder(),
-                      fillColor: Colors.indigo.shade100,
+                      fillColor: Color.fromRGBO(212, 223, 255, 1),
                       filled:true
                   ),
                   keyboardType: TextInputType.number,
@@ -226,6 +226,7 @@ class _MyAppState extends State<mainPage> {
 
 
               ),
+
                 Padding(padding: EdgeInsets.all(8.0),
                 child:
                 Align(

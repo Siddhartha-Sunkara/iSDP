@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(orderDetails());
 
@@ -42,28 +43,26 @@ class _TableExampleState extends State<TableExample> {
 
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.red.shade600,
-        title: Text('Order Details'),
-        leading: IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.arrow_back_ios),
-            color: Colors.black
-        ),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.home_sharp),
-              color: Colors.black
+        appBar: AppBar(
+          title: Text('Order Details', style: GoogleFonts.montserrat(textStyle: Theme.of(context).textTheme.headline4, fontSize: 20, color: Color.fromRGBO(255,0,56, 1),fontStyle: FontStyle.normal, fontWeight:FontWeight.w500 )),
+          elevation: 0,
+          backgroundColor: Colors.white,
+          leading: const Icon(
+            Icons.menu,
+            color: Colors.black,
           ),
-        ],
-      ),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.person, color: Colors.black),
+              onPressed: () {},
+            )
+          ],
+        ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Table(
           defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-          border: TableBorder(verticalInside: BorderSide(width: 1, color: Colors.blue, style: BorderStyle.solid)),
+          border: TableBorder(verticalInside: BorderSide(width: 1, color: Color.fromRGBO(255,0,56,1), style: BorderStyle.solid)),
           columnWidths: {
             0: FractionColumnWidth(.1),
             1: FractionColumnWidth(.3),
@@ -140,8 +139,8 @@ class _TableExampleState extends State<TableExample> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.arrow_forward_ios, color: Colors.black,),
-        backgroundColor: Colors.red,
+        child: Icon(Icons.arrow_forward_ios, color: Colors.white,),
+        backgroundColor: Color.fromRGBO(255,0,56,1),
         onPressed: () {
           Navigator.push(
             context,

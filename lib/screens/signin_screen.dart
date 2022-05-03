@@ -83,6 +83,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   border: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.blue)),
                   labelText: 'Password',
+                  hintText: 'Enter the Password',
                 ),
               ),
             ),

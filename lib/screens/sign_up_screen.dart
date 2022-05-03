@@ -6,18 +6,19 @@ import 'package:project2/page.dart';
 import 'package:project2/customerDetails.dart';
 import 'package:project2/reusable_widgets/reusable_widget.dart';
 import 'package:project2/screens/home_screen.dart';
-import 'package:project2/screens/sign_up_screen.dart';
+import 'package:project2/screens/signin_screen.dart';
 import 'package:project2/screens/signup_screen.dart';
-class SignInScreen extends StatefulWidget {
-  const SignInScreen({Key? key}) : super(key: key);
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({Key? key}) : super(key: key);
 
   @override
-  _SignInScreenState createState() => _SignInScreenState();
+  _SignUpScreenState createState() => _SignUpScreenState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _passwordTextController = TextEditingController();
   final TextEditingController _emailTextController = TextEditingController();
+  final TextEditingController _usernameTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -44,22 +45,36 @@ class _SignInScreenState extends State<SignInScreen> {
             // ),
 
             Container(
-              alignment: Alignment.center,
-              padding:  EdgeInsets.all(10),
-              child: Text(
+                alignment: Alignment.center,
+                padding:  EdgeInsets.all(10),
+                child: Text(
 
-                  'User Login',
+                    'User Registration',
 
-                  style: GoogleFonts.montserrat(textStyle: Theme.of(context).textTheme.headline4, fontSize: 30, color: Colors.lightBlue,fontStyle: FontStyle.normal, fontWeight:FontWeight.w500 )
-                      )),
+                    style: GoogleFonts.montserrat(textStyle: Theme.of(context).textTheme.headline4, fontSize: 30, color: Colors.lightBlue,fontStyle: FontStyle.normal, fontWeight:FontWeight.w500 )
+                )),
 
             Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
                 child:  Text(
-                  'Sign in',
+                  'Sign up',
                   style: GoogleFonts.montserrat(textStyle: Theme.of(context).textTheme.headline4, fontSize: 20, color: Colors.lightBlue,fontStyle: FontStyle.normal, fontWeight:FontWeight.w500 ),
                 )),
+            Container(
+              padding: const EdgeInsets.all(10),
+              child: TextField(
+                obscureText: true,
+                controller: _usernameTextController,
+                decoration: const InputDecoration(
+                  prefixIcon: Icon(Icons.email, color: Colors.blue),
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.blue)),
+                  labelText: 'Email address',
+                  hintText: 'Enter your email address',
+                ),
+              ),
+            ),
             Container(
               padding: const EdgeInsets.all(10),
               child: TextField(
@@ -71,11 +86,12 @@ class _SignInScreenState extends State<SignInScreen> {
                       borderSide: BorderSide(color: Colors.blue)
                   ),
                   labelText: 'Username',
+                  hintText: 'Enter your username'
                 ),
               ),
             ),
             Container(
-              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
               child: TextField(
                 obscureText: true,
                 controller: _passwordTextController,
@@ -88,51 +104,24 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
               ),
             ),
-            TextButton(
-              onPressed: () {
-                //forgot password screen
-              },
-              child: const Text('Forgot Password?',),
-            ),
+            SizedBox(height: 10,),
             Container(
                 height: 50,
                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                 child: ElevatedButton(
-                  child: Text('Login'),
+                  child: Text('Register'),
                   onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context){
-                          return mainPage();
-                      }
-                      ));
-                  }  ,
-                    // print(nameController.text);
-                    // print(passwordController.text);
-
-                )
-            ),
-            Row(
-              children: <Widget>[
-                const Text('Does not have account?'),
-                TextButton(
-                  child: const Text(
-                    'Sign Up',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  onPressed: (
-
-                      ) {
                     Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return SignUpScreen();
-                    },
+                      return SignInScreen();
+                    }
+                    ));
+                  }  ,
+                  // print(nameController.text);
+                  // print(passwordController.text);
 
-                    )
-                    );
-                    //signup screen
-                  },
                 )
-              ],
-              mainAxisAlignment: MainAxisAlignment.center,
             ),
+
           ],
         ))
-  ;}}
+    ;}}

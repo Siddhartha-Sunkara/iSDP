@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project2/page.dart';
 
-import 'package:project2/customerDetails.dart';
+
 import 'package:project2/reusable_widgets/reusable_widget.dart';
 import 'package:project2/screens/home_screen.dart';
 import 'package:project2/screens/signin_screen.dart';
-import 'package:project2/screens/signup_screen.dart';
+
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
 

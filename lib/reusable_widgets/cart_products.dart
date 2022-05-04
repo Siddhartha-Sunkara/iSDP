@@ -55,37 +55,50 @@ class CartProductCard extends StatelessWidget{
   Widget build(BuildContext context) {
       return Padding(padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
       child:
-          Column(
-            children: [
-              Row(
-                mainAxisAlignment:  MainAxisAlignment.spaceBetween,
-                children: [
-                  CircleAvatar(radius: 30,
-                    backgroundImage: NetworkImage(
-                      product.imageUrl,
-                    ),),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  Expanded(child:Text(product.name) ),
-                  SizedBox(width: 40),
-                  IconButton(onPressed: (
-                      ){
-                    controller.removeProduct(product);
-                  },
-                      icon: Icon(Icons.remove_circle)),
-                  SizedBox(width: 35),
-                  Expanded(child:Text('${quantity}') ),
-                  IconButton(onPressed: (){
-                    controller.addProduct(product);
-                  },
-                      icon: Icon(Icons.add_circle)),
+          Container(
+
+            decoration: BoxDecoration(
+              color: Color.fromRGBO(193, 244, 197,1),
+                border: Border.all(
+                  color: Colors.green.shade800,
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(20))
+            ),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment:  MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(8),
+                      child: CircleAvatar(radius: 30,
+                        backgroundImage: NetworkImage(
+                          product.imageUrl,
+                        ),),
+                    ),
+                    // const SizedBox(
+                    //   width: 10,
+                    // ),
+                    Expanded(child:Text(product.name) ),
+                    SizedBox(width: 40),
+                    IconButton(onPressed: (
+                        ){
+                      controller.removeProduct(product);
+                    },
+                        icon: Icon(Icons.remove_circle)),
+                    SizedBox(width: 35),
+                    Expanded(child:Text('${quantity}') ),
+                    IconButton(onPressed: (){
+                      controller.addProduct(product);
+                    },
+                        icon: Icon(Icons.add_circle)),
 
 
 
-                ],
-              )
-            ],
+                  ],
+                )
+              ],
+            ),
           )
         );
   }

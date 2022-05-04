@@ -10,25 +10,29 @@ class CartTotal extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Obx(()=>
-        Container(
-        padding: const EdgeInsets.symmetric(horizontal: 75),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text('Total',
-              style: GoogleFonts.montserrat(textStyle: Theme.of(context).textTheme.headline4,
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold),),
-            Text('${controller.total}',
-              style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold),),
+        SingleChildScrollView(
+          child:
+            Container(
+            padding: const EdgeInsets.symmetric(horizontal: 50),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Total Price',
+                  style: GoogleFonts.montserrat(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold),),
+                Text('${controller.total}',
+                  style:  GoogleFonts.montserrat(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold),),
 
 
-          ],
+              ],
+
+            ),
+      ),
 
         ),
-      ),
     );
   }
 }

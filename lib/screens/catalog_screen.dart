@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -24,8 +25,13 @@ class CatalogScreen extends StatelessWidget{
             onPressed: () {},
           ),
           IconButton(
-            icon: const Icon(Icons.person, color: Colors.black),
-            onPressed: () {},
+          icon: FaIcon(FontAwesomeIcons.circleChevronRight, color: Colors.black),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                return CartScreen();
+              }
+              ));
+            },
           )
         ],),
 
@@ -34,9 +40,9 @@ class CatalogScreen extends StatelessWidget{
           children:[
             CatalogProducts(),
 
-          ElevatedButton(
-          onPressed:() => Get.to(()=> CartScreen()),
-          child: const Text('Go to Cart'),)
+          // ElevatedButton(
+          // onPressed:() => Get.to(()=> CartScreen()),
+          // child: const Text('Go to Cart'),)
     ]
         )
 

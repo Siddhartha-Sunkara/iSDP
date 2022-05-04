@@ -159,14 +159,14 @@ class QR extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[850],
+      backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.red.shade600,
         title: const Text('Scan to Pay'),
       ),
-      body: Center(
-        child: Image(
-            image: AssetImage('images/qr.jpeg')
+      body: Container(
+        child: const Image(
+            image: AssetImage('assets/images/qr.jpeg')
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project2/database.dart';
 
 class loginPage extends StatefulWidget {
   const loginPage({Key? key}) : super(key: key);
@@ -8,6 +9,7 @@ class loginPage extends StatefulWidget {
 }
 
 class _loginPage extends State<loginPage> {
+  SupabaseManager _supabaseManager = SupabaseManager();
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
@@ -89,6 +91,7 @@ class _loginPage extends State<loginPage> {
                 child: ElevatedButton(
                   child: const Text('Login'),
                   onPressed: () {
+
                     print(nameController.text);
                     print(passwordController.text);
                   },
@@ -96,7 +99,8 @@ class _loginPage extends State<loginPage> {
             ),
             Row(
               children: <Widget>[
-                const Text('Does not have account?'),
+
+                const Text("Does not have account?"),
                 TextButton(
                   child: const Text(
                     'Sign Up',

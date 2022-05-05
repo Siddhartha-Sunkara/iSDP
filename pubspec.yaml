@@ -37,6 +37,9 @@ dependencies:
   google_fonts: ^2.3.2
   get: ^4.3.8
   font_awesome_flutter: ^10.1.0
+  supabase_flutter: ^0.3.0
+  esc_pos_printer: ^4.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -64,7 +64,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
             Container(
               padding: const EdgeInsets.all(10),
               child: TextField(
-                obscureText: true,
                 controller: _usernameTextController,
                 decoration: const InputDecoration(
                   prefixIcon: Icon(Icons.email, color: Colors.blue),
@@ -111,6 +110,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: ElevatedButton(
                   child: Text('Register'),
                   onPressed: (){
+                    // _supabase.sign
                     Navigator.push(context, MaterialPageRoute(builder: (context){
                       return SignInScreen();
                     }

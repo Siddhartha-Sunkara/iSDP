@@ -5,6 +5,7 @@ import 'package:project2/reusable_widgets/cart_products.dart';
 import 'package:project2/reusable_widgets/cart_total.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:project2/screens/invoice.dart';
+import 'package:project2/screens/print.dart';
 import '../reusable_widgets/cart_products.dart';
 
 class CartScreen extends StatelessWidget{
@@ -27,7 +28,7 @@ class CartScreen extends StatelessWidget{
             onPressed: (
                 ) {
               Navigator.push(context, MaterialPageRoute(builder: (context){
-                return invoice();
+                return print();
               }
               ));
             },

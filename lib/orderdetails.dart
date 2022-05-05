@@ -1,13 +1,22 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:project2/database.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-void main() => runApp(orderDetails());
-
+void main() => runApp(const orderDetails());
+SupabaseManager _supabaseManager = SupabaseManager();
 class orderDetails extends StatelessWidget {
+  const orderDetails({Key? key}) : super(key: key);
+
+
+
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       //theme: ThemeData(
       //scaffoldBackgroundColor: Colors.deepOrange.shade100,
       //),
@@ -19,12 +28,14 @@ class orderDetails extends StatelessWidget {
 }
 
 class TableExample extends StatefulWidget {
+  const TableExample({Key? key}) : super(key: key);
+
   @override
   _TableExampleState createState() => _TableExampleState();
 }
 
 class _TableExampleState extends State<TableExample> {
-  Widget checkIcon() => Padding(
+  Widget checkIcon() => const Padding(
     padding: EdgeInsets.only(bottom: 16, top: 8),
     child: Icon(
       Icons.check_circle,
@@ -32,7 +43,7 @@ class _TableExampleState extends State<TableExample> {
     ),
   );
 
-  Widget cancelIcon() => Padding(
+  Widget cancelIcon() => const Padding(
     padding: EdgeInsets.only(bottom: 16, top: 8),
     child: Icon(
       Icons.cancel,
@@ -62,8 +73,8 @@ class _TableExampleState extends State<TableExample> {
         padding: const EdgeInsets.all(8.0),
         child: Table(
           defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-          border: TableBorder(verticalInside: BorderSide(width: 1, color: Color.fromRGBO(255,0,56,1), style: BorderStyle.solid)),
-          columnWidths: {
+          border: const TableBorder(verticalInside: BorderSide(width: 1, color: Color.fromRGBO(255,0,56,1), style: BorderStyle.solid)),
+          columnWidths: const {
             0: FractionColumnWidth(.1),
             1: FractionColumnWidth(.3),
             2: FractionColumnWidth(.2),
@@ -74,7 +85,7 @@ class _TableExampleState extends State<TableExample> {
             TableRow(children: [
               Column(
                 mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
+                children: const <Widget>[
                   SizedBox(
                     height: 16,
                   ),
@@ -87,7 +98,7 @@ class _TableExampleState extends State<TableExample> {
               ),
               Column(
                 mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
+                children: const <Widget>[
                   SizedBox(
                     height: 16,
                   ),
@@ -99,7 +110,7 @@ class _TableExampleState extends State<TableExample> {
               ),
               Column(
                 mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
+                children: const <Widget>[
                   SizedBox(
                     height: 16,
                   ),
@@ -111,7 +122,7 @@ class _TableExampleState extends State<TableExample> {
               ),
               Column(
                 mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
+                children: const <Widget>[
                   SizedBox(
                     height: 16,
                   ),
@@ -124,7 +135,7 @@ class _TableExampleState extends State<TableExample> {
               ),
               Column(
                 mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
+                children: const <Widget>[
                   SizedBox(
                     height: 16,
                   ),
@@ -139,8 +150,8 @@ class _TableExampleState extends State<TableExample> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.arrow_forward_ios, color: Colors.white,),
-        backgroundColor: Color.fromRGBO(255,0,56,1),
+        child: const Icon(Icons.arrow_forward_ios, color: Colors.white,),
+        backgroundColor: const Color.fromRGBO(255,0,56,1),
         onPressed: () {
           Navigator.push(
             context,
@@ -158,14 +169,32 @@ class QR extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+      PostgrestResponse? response;
+      _supabaseManager.getdata().then((value) => log(value.toString()));
+      // print(t);
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: const Color.fromRGBO(32, 33, 37,1),
       appBar: AppBar(
-        backgroundColor: Colors.red.shade600,
-        title: const Text('Scan to Pay'),
+        backgroundColor: Colors.white,
+
+          title: Text('Scan to Pay', style: GoogleFonts.montserrat(textStyle:Theme.of(context).textTheme.headline4, fontSize: 20, color: Colors.black,fontStyle: FontStyle.normal, fontWeight:FontWeight.w500  ))
+          ,actions: <Widget>[
+
+      IconButton(
+      icon:  const FaIcon(FontAwesomeIcons.arrowRightFromBracket, color: Colors.black),
+      onPressed: (
+          ) {
+        // Navigator.push(context, MaterialPageRoute(builder: (context){
+        //   return logout();
+        // }
+        // ));
+      },
+    )
+    ],
       ),
-      body: Container(
-        child: const Image(
+      body:
+      const Center(
+        child: Image(
             image: AssetImage('assets/images/qr.jpeg')
         ),
       ),

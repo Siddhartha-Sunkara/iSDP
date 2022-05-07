@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,25 +14,28 @@ class CartTotal extends StatelessWidget{
     return Obx(()=>
         SingleChildScrollView(
           child:
-            Container(
+          Container(
             padding: const EdgeInsets.symmetric(horizontal: 50),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text('Total Price',
                   style: GoogleFonts.montserrat(
-                      fontSize: 28,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold),),
+                Text('Rs',style:  GoogleFonts.montserrat(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),),
                 Text('${controller.total}',
                   style:  GoogleFonts.montserrat(
-                      fontSize: 28,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold),),
 
 
               ],
 
             ),
-      ),
+          ),
 
         ),
     );

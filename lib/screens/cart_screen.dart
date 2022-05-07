@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:project2/NavBar.dart';
 import 'package:project2/reusable_widgets/cart_products.dart';
 import 'package:project2/reusable_widgets/cart_total.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:project2/screens/invoice.dart';
-import 'package:project2/screens/print.dart';
+
 import '../reusable_widgets/cart_products.dart';
 
 class CartScreen extends StatelessWidget{
@@ -14,13 +15,12 @@ class CartScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:  Text('Your Cart ' , style: GoogleFonts.montserrat(textStyle: Theme.of(context).textTheme.headline4, fontSize: 20, color: Colors.green.shade900,fontStyle: FontStyle.normal, fontWeight:FontWeight.w500 )),
+      drawer: NavBar(),
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
+        title:  Text('Your Cart ' , style: GoogleFonts.montserrat(textStyle: Theme.of(context).textTheme.headline4, fontSize: 20, color: Colors.green.shade900,fontStyle: FontStyle.normal, fontWeight:FontWeight.w500 )),
         elevation: 0,
         backgroundColor: Colors.white,
-        leading: const Icon(
-          Icons.menu,
-          color: Colors.black,
-        ),
         actions: <Widget>[
 
           IconButton(
@@ -28,7 +28,7 @@ class CartScreen extends StatelessWidget{
             onPressed: (
                 ) {
               Navigator.push(context, MaterialPageRoute(builder: (context){
-                return print();
+                return invoice();
               }
               ));
             },
@@ -40,6 +40,7 @@ class CartScreen extends StatelessWidget{
             children: [
 
               CartProducts(),
+
               CartTotal(),
           ],
     ),

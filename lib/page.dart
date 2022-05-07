@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:intl/intl.dart';
+import 'package:project2/NavBar.dart';
 import 'package:project2/menu.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project2/screens/catalog_screen.dart';
@@ -9,38 +11,59 @@ class mainPage extends StatefulWidget {
   const mainPage({Key? key}) : super(key: key);
 
   @override
-  State<mainPage> createState() => _MyAppState();
+  State<mainPage> createState() => _mainPageState();
 }
 
-class _MyAppState extends State<mainPage> {
+class _mainPageState extends State<mainPage> {
   DateTime selectedDate = DateTime.now();
   _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
       context: context,
-      initialDate: selectedDate, // Refer step 1
+      initialDate: selectedDate,
       firstDate: DateTime(1969),
       lastDate: DateTime(2023),
     );
-    if (picked != null && picked != selectedDate) {
-      setState(() {
-        selectedDate = picked;
-      });
+    if(selectedDate != null ){
+      print(selectedDate);
+      String formattedDate = DateFormat('yyyy-MM-dd').format(selectedDate);
+      print(formattedDate);
+    }else{
+      print("Date is not selected");
     }
-  }
 
+
+
+
+
+  }
   @override
+  void initState() {
+    dateinput.text = ""; //set the initial value of text field
+    super.initState();
+  }
+  @override
+  final TextEditingController _firstNameTextController = TextEditingController();
+  final TextEditingController _lastNameTextController = TextEditingController();
+  final TextEditingController _cusEmailTextController = TextEditingController();
+  final TextEditingController _phoneTextController = TextEditingController();
+  final TextEditingController _genderTextController = TextEditingController();
+  final TextEditingController dateinput = TextEditingController() ;
+
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Tutorial',
       home: Scaffold(
+        drawer: NavBar() ,
           appBar: AppBar(
+                iconTheme: IconThemeData(color: Colors.black),
+
             title: Text('Customer Details', style: GoogleFonts.montserrat(textStyle: Theme.of(context).textTheme.headline4, fontSize: 20, color: Colors.purple.shade900,fontStyle: FontStyle.normal, fontWeight:FontWeight.w500 )),
             elevation: 0,
             backgroundColor: Colors.white,
-            leading: const Icon(
-              Icons.menu,
-              color: Colors.black,
-            ),
+            // leading: const Icon(
+            //   Icons.menu,
+            //   color: Colors.black,
+            // ),
             actions: <Widget>[
 
               IconButton(
@@ -93,10 +116,11 @@ class _MyAppState extends State<mainPage> {
                   height: 35,
                 ),
               Row(
-                children: const [
+                children:  [
                   Expanded(
                     child: TextField(
                       // style: TextStyle(fontFamily: 'Inter', fontSize: 15),
+                      controller: _firstNameTextController,
                       decoration: InputDecoration(
 
                         hintText: "Enter the first name",
@@ -122,6 +146,7 @@ class _MyAppState extends State<mainPage> {
                   Expanded(
                     child:
                   TextField(
+                    controller: _lastNameTextController,
                     decoration: InputDecoration(
                         hintText: "Enter the last name",
                         hintStyle:  TextStyle(fontFamily: 'Inter', fontSize: 15),
@@ -145,7 +170,8 @@ class _MyAppState extends State<mainPage> {
                 const SizedBox(
                   height: 8,
                 ),
-                 const TextField(
+                  TextField(
+                   controller: _cusEmailTextController,
                   decoration: InputDecoration(
                       hintText: "Enter the email address",
                       hintStyle:  TextStyle(fontFamily: 'Inter', fontSize: 15),
@@ -166,7 +192,8 @@ class _MyAppState extends State<mainPage> {
                 const SizedBox(
                   height: 8,
                 ),
-                const TextField(
+                TextField(
+                  controller: _genderTextController,
                   decoration: InputDecoration(
                       hintText: "Male or Female or Others",
                       hintStyle:  const TextStyle(fontFamily: 'Inter', fontSize: 15),
@@ -187,7 +214,8 @@ class _MyAppState extends State<mainPage> {
                   height: 8,
                 ),
 
-                 const TextField(
+                TextField(
+                  controller: _phoneTextController,
                   decoration: InputDecoration(
                       hintText: "Enter the Mobile Number",
                       hintStyle:  TextStyle(fontFamily: 'Inter', fontSize: 15),
@@ -218,10 +246,46 @@ class _MyAppState extends State<mainPage> {
                       height: 50,
 
                         child:
-                        ElevatedButton(onPressed: () { _selectDate(context); }, child: const Text('Enter Date of Birth') ,
-                          style:ElevatedButton.styleFrom(primary: Colors.purple.shade900)  ,
+                        // ElevatedButton(onPressed: () { _selectDate(context); }, child: const Text('Enter Date of Birth') ,
+                        //   style:ElevatedButton.styleFrom(primary: Colors.purple.shade900)  ,
+                        //
+                        // )
+                TextField(
 
-                        )
+                controller: dateinput,
+                decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.calendar_today), //icon of text field
+                    labelText: "Enter Date",
+                    border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+                    fillColor: Color.fromRGBO(212, 223, 255, 1),
+                    filled:true
+                ),
+
+                readOnly: true,  //set it true, so that user will not able to edit text
+                onTap: () async {
+                  DateTime? pickedDate = await showDatePicker(
+                      context: context, initialDate: DateTime.now(),
+                      firstDate: DateTime(2000), //DateTime.now() - not to allow to choose before today.
+                      lastDate: DateTime(2101)
+                  );
+
+                  if(pickedDate != null ){
+                    print(pickedDate);  //pickedDate output format => 2021-03-10 00:00:00.000
+                    String formattedDate = DateFormat('dd-MM-yyyy').format(pickedDate);
+                    print(formattedDate); //formatted date output using intl package =>  2021-03-16
+                    //you can implement different kind of Date Format here according to your requirement
+
+                    setState(() {
+                      // final TextEditingController dateinput = TextEditingController() ;
+                      dateinput.text = formattedDate; //set output date to TextField value.
+                    });
+                  }else{
+                    print("Date is not selected");
+                  }
+                },
+              )
+
+
                     )
                     )
 

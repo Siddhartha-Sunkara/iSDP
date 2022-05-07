@@ -44,12 +44,15 @@ class CartProductCard extends StatelessWidget{
   final int index;
 
 
+
   const CartProductCard({
     Key? key,
   required this.controller,
   required this.product,
   required this.quantity,
+
   required this.index}): super(key :key);
+
 
   @override
   Widget build(BuildContext context) {

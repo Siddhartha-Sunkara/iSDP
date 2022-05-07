@@ -14,7 +14,7 @@ class CartController extends GetxController{
     Get.snackbar('Product Added',
         "Added ${product.name} to the Cart",
     snackPosition: SnackPosition.BOTTOM,
-    duration: Duration(seconds: 1));
+    duration: Duration(seconds: 2));
 
 
 

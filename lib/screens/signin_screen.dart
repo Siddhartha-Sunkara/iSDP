@@ -18,6 +18,8 @@ class SignInScreen extends StatefulWidget {
 class _SignInScreenState extends State<SignInScreen> {
   final TextEditingController _passwordTextController = TextEditingController();
   final TextEditingController _emailTextController = TextEditingController();
+  final userList = ["Siddhartha","Sobham"];
+  final userPassword =["Siddhu11","Sobham11"];
 
   @override
   Widget build(BuildContext context) {
@@ -88,22 +90,26 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
               ),
             ),
-            TextButton(
-              onPressed: () {
-                //forgot password screen
-              },
-              child: const Text('Forgot Password?',),
-            ),
+            SizedBox(height: 20,),
             Container(
                 height: 50,
                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                 child: ElevatedButton(
                   child: Text('Login'),
                   onPressed: (){
+                    bool flag = false;
+
+                    for(int i=0; i<userList.length; i++){
+                      if(_emailTextController.text == userList[i] && _passwordTextController.text == userPassword[i]){
+                        flag = true;
+                      }
+                    }
+                    if (flag){
                       Navigator.push(context, MaterialPageRoute(builder: (context){
-                          return mainPage();
+                        return mainPage();
                       }
                       ));
+                    }
                   }  ,
                     // print(nameController.text);
                     // print(passwordController.text);
@@ -112,6 +118,7 @@ class _SignInScreenState extends State<SignInScreen> {
             ),
             Row(
               children: <Widget>[
+
                 const Text('Does not have account?'),
                 TextButton(
                   child: const Text(
@@ -120,16 +127,17 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                   onPressed: (
 
-                      ) {
+                      ){
                     Navigator.push(context, MaterialPageRoute(builder: (context){
                       return SignUpScreen();
-                    },
+                    }
+                    ));
+                    {
 
+                    }
+                  }
                     )
-                    );
-                    //signup screen
-                  },
-                )
+
               ],
               mainAxisAlignment: MainAxisAlignment.center,
             ),

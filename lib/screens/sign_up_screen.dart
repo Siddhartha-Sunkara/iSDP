@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project2/page.dart';
+import 'dart:async';
+import 'package:path_provider/path_provider.dart';
+import 'dart:io';
 
 
 import 'package:project2/reusable_widgets/reusable_widget.dart';
@@ -109,8 +112,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                 child: ElevatedButton(
                   child: Text('Register'),
-                  onPressed: (){
+                  onPressed: () {
                     // _supabase.sign
+
                     Navigator.push(context, MaterialPageRoute(builder: (context){
                       return SignInScreen();
                     }
@@ -125,3 +129,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ],
         ))
     ;}}
+
+
+
+// Text(child: 'Hello', style : TextStyle(fontsize:24)

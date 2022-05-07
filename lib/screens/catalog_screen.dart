@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../NavBar.dart';
+import '../reusable_widgets/NavBar.dart';
 import '../reusable_widgets/catalog_products.dart';
 import 'cart_screen.dart';
 

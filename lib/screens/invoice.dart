@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:project2/orderdetails.dart';
+import 'package:project2/screens/orderdetails.dart';
 import 'package:project2/reusable_widgets/cart_products.dart';
 import 'package:project2/reusable_widgets/cart_total.dart';
 import 'package:project2/reusable_widgets/invoice_Products.dart';
-import 'package:project2/page.dart';
-import '../NavBar.dart';
+import 'package:project2/screens/page.dart';
+import '../reusable_widgets/NavBar.dart';
 import '../models/product_model.dart';
 import '../reusable_widgets/cart_products.dart';
 import 'package:project2/controllers/cart_controller.dart';
@@ -120,7 +120,7 @@ class invoice extends StatelessWidget {
                                 width: 150,
                                 color: Colors.white,
                                 padding: EdgeInsets.fromLTRB(15,3 ,3,3),
-                                child: Text("Sobham Bhagirat ", style: GoogleFonts.montserrat(fontSize: 10,color: Colors.black),),
+                                child: Text("Sobham Panja", style: GoogleFonts.montserrat(fontSize: 10,color: Colors.black),),
 
                               ),
                             ],

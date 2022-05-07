@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:project2/page.dart';
+import 'package:project2/screens/page.dart';
 
-
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:project2/reusable_widgets/reusable_widget.dart';
 import 'package:project2/screens/home_screen.dart';
 import 'package:project2/screens/sign_up_screen.dart';
@@ -33,7 +33,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 width: 500,
                 decoration: const BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('assets/images/1.jpg'),
+                        image: AssetImage('assets/images/10.jpg'),
                         fit: BoxFit.cover
                     ),
                     borderRadius: BorderRadius.all(Radius.circular(10)
@@ -132,6 +132,8 @@ class _SignInScreenState extends State<SignInScreen> {
                       return SignUpScreen();
                     }
                     ));
+
+
                     {
 
                     }
@@ -144,3 +146,4 @@ class _SignInScreenState extends State<SignInScreen> {
           ],
         ))
   ;}}
+

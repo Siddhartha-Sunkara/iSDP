@@ -3,8 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:project2/NavBar.dart';
-import 'package:project2/database.dart';
+import 'package:project2/reusable_widgets/NavBar.dart';
+import 'package:project2/controllers/database.dart';
 import 'package:project2/screens/signin_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 

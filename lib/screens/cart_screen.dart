@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:project2/NavBar.dart';
+import 'package:project2/reusable_widgets/NavBar.dart';
 import 'package:project2/reusable_widgets/cart_products.dart';
 import 'package:project2/reusable_widgets/cart_total.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

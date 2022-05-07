@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:project2/page.dart';
+import 'package:project2/screens/page.dart';
 import 'dart:async';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
@@ -35,7 +35,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 width: 500,
                 decoration: const BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('assets/images/1.jpg'),
+                        image: AssetImage('assets/images/11.jpg'),
                         fit: BoxFit.cover
                     ),
                     borderRadius: BorderRadius.all(Radius.circular(10)

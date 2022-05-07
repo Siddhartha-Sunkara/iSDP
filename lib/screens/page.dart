@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
-import 'package:project2/NavBar.dart';
-import 'package:project2/menu.dart';
+import 'package:project2/reusable_widgets/NavBar.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project2/screens/catalog_screen.dart';
 
@@ -255,7 +255,7 @@ class _mainPageState extends State<mainPage> {
                 controller: dateinput,
                 decoration: InputDecoration(
                     prefixIcon: Icon(Icons.calendar_today), //icon of text field
-                    labelText: "Enter Date",
+                    labelText: "Enter Date of Birth",
                     border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                     fillColor: Color.fromRGBO(212, 223, 255, 1),
                     filled:true

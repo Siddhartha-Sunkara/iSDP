@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:project2/models/product_model.dart';
 
@@ -10,11 +12,12 @@ class CartController extends GetxController{
     else{
       _products[product]=1;
     }
-    
-    Get.snackbar('Product Added',
-        "Added ${product.name} to the Cart",
-    snackPosition: SnackPosition.BOTTOM,
-    duration: Duration(seconds: 2));
+
+    Fluttertoast.showToast(
+      msg: "Added to cart",
+      toastLength: Toast.LENGTH_SHORT,
+      backgroundColor: Colors.black,
+    );
 
 
 

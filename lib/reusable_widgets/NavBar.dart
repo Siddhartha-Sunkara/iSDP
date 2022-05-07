@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:project2/page.dart';
+import 'package:project2/screens/page.dart';
 import 'package:project2/screens/cart_screen.dart';
 import 'package:project2/screens/catalog_screen.dart';
 import 'package:project2/screens/signin_screen.dart';
@@ -15,7 +15,7 @@ class NavBar extends StatelessWidget {
         padding: EdgeInsets.zero,
         children:[
           UserAccountsDrawerHeader(
-              accountName: Text('Sobham Bhagirath'),
+              accountName: Text('Sobham Panja'),
               accountEmail: Text('Sobham@gmail.com')
           ,currentAccountPicture:  CircleAvatar(
             child:  ClipOval(
